@@ -1,0 +1,54 @@
+console.clear();
+
+//Objeto JSON
+const objeto = {
+    "funcionarios": [
+        {
+            "id": 1,
+            "nome": "ana",
+            "salario": 1000
+        },
+        {
+            "id": 2,
+            "nome": "maria",
+            "salario": 2000
+        },
+        {
+            "id": 3,
+            "nome": "joao",
+            "salario": 3000
+        }
+    ]
+}
+
+//Exercícios
+
+//forEach 
+//Exibir o nome e o salário de todos os funcionários.
+objeto.funcionarios.forEach( (funcionario) => {
+    console.log('Nome: '+ funcionario.nome + '- Salário: '+funcionario.salario);
+});
+
+//map
+//Obter somente o nome e o salário dos funcionários.
+let dadosFuncionarios = objeto.funcionarios.map( (funcionario) => {
+    return {'nome': funcionario.nome, 
+            'salario': funcionario.salario};
+});
+console.log(dadosFuncionarios);
+
+//filter
+//Selecionar somente os funcionários que ganham mais do que 1500.
+let funcionariosSalarioMaior1500 = objeto.funcionarios.filter( (funcionario) => {
+    if(funcionario.salario > 1500)
+        return true;
+    return false
+});
+console.log(funcionariosSalarioMaior1500);
+
+//reduce
+//Somar o salário de todos os funcionários.
+let somatorio = objeto.funcionarios.reduce( (soma, funcionario) => {
+    return soma + funcionario.salario;
+},0);
+console.log("A soma dos salarios = "+somatorio);
