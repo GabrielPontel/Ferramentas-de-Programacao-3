@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> sei la </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h1>Interpolação</h1>
+
+  <strong>Nome: </strong> {{ nome }} <br/>
+
+  <strong>Salário: </strong> {{ salario }} <br/>
+
+  <strong>Telefone: </strong>{{getTelefone()}} <br/>
+
+  <p [style]="fonte" (click)="alterarEstilo()">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et blanditiis esse autem corrupti delectus ut iure eligendi eius, assumenda earum! Ut distinctio hic incidunt, sed non vero reprehenderit provident officia.</p>
+
+  <ion-button (click)="exibir()"></ion-button>
+
+  <h1>Two Way Binding</h1>
+  <ion-input label="Nome" [(ngModel)]="nome"></ion-input>
+</ion-content>

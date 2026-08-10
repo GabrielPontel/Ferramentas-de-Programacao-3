@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>diretiva-estratura</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!--Um jeito mais antigo DE MEXER COM O VETOR NO HTML-->
+  <!--Não vamos utilizar dessa forma-->
+  <p *ngFor="let item of vetor">{{item}}</p>
+
+  <!--Modelo mais atual-->
+  @for(item of vetor; track $index){
+    {{item}}
+  }
+  
+  <ion-grid>
+  <ion-row>
+  <ion-col>Id</ion-col>
+  <ion-col>Nome</ion-col>
+  <ion-col>Salário</ion-col>
+  </ion-row>
+  @for(item of objeto.funcionarios; track $index){
+    <ion-row>
+    <ion-col>{{item.id}}</ion-col>
+    <ion-col>{{item.nome}}</ion-col>
+    <ion-col>{{item.salario}}</ion-col>
+    <ion-button (click)="removerFuncionario($index)"></ion-button>
+    </ion-row>
+  }
+  </ion-grid>
+</ion-content>
