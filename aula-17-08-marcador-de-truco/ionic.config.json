@@ -1,0 +1,7 @@
+{
+  "name": "Aula17-08: Marcador de Truco",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
