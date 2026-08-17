@@ -6,6 +6,10 @@ import {
   IonContent,
   ToastController, IonRow, IonGrid, IonCol, IonIcon, IonButton } from "@ionic/angular/standalone";
 
+import { addIcons } from 'ionicons';
+import { trophy } from 'ionicons/icons';
+
+
 interface Jogador {
   pontos: number;
   partidas: number;
@@ -32,6 +36,7 @@ export class HomePage {
       pontos: 0,
       partidas: 0,
     };
+    addIcons({trophy});
   }
 
   private async exibirMensagem(mensagem: string) {
@@ -72,12 +77,8 @@ export class HomePage {
   protected fecharPartida() {
     if (this.nos.pontos == 12) {
       this.exibirMensagem("Nós ganhamos a partida");
-      this.nos.partidas += 1;
-      this.nos.pontos = 0;
     } else {
       this.exibirMensagem("Eles ganharam a partida");
-      this.eles.partidas += 1;
-      this.eles.pontos = 0;
     }
   }
 
@@ -89,5 +90,15 @@ export class HomePage {
   protected zerarVitorias(){
     this.nos.partidas=0;
     this.eles.partidas=0;
+  }
+
+  protected reiniciar(){
+    if (this.nos.pontos == 12) {
+      this.nos.partidas += 1;
+      this.nos.pontos = 0;
+    } else {
+      this.eles.partidas += 1;
+      this.eles.pontos = 0;
+    }
   }
 }

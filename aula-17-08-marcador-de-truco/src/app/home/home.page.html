@@ -1,39 +1,83 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Marcador de Truco
-    </ion-title>
+    <ion-title> Marcador de Truco </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-grid >
-  <ion-row>
-    <ion-col><h1>Nós</h1></ion-col>
-    <ion-col><h1>Eles</h1></ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col><h3>{{nos.pontos}}</h3></ion-col>
-    <ion-col><h3>{{eles.pontos}}</h3></ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col><ion-button shape="round" (click)="incrementar(nos)">+{{quantidade}}</ion-button></ion-col>
-    <ion-col><ion-button shape="round" (click)="incrementar(eles)">+{{quantidade}}</ion-button></ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col><ion-button shape="round" (click)="desincrementar(nos)">-1</ion-button></ion-col>
-    <ion-col><ion-button shape="round" (click)="desincrementar(eles)">-1</ion-button></ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col><h3>{{nos.partidas}}</h3></ion-col>
-    <ion-col><h3>{{eles.partidas}}</h3></ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col><ion-button shape="round" (click)="valerMaisPontos()">Elevar a quantidade de pontos. Atualmente={{quantidade}}</ion-button></ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col><ion-button shape="round" (click)="zerarPontos()">Zerar Pontos</ion-button></ion-col>
-    <ion-col><ion-button shape="round" (click)="zerarVitorias()">Zerar Vitorias </ion-button></ion-col>
-  </ion-row>
-</ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col><h1>Nós</h1></ion-col>
+      <ion-col><h1>Eles</h1></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><h3>{{nos.pontos}}</h3></ion-col>
+      <ion-col><h3>{{eles.pontos}}</h3></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col
+        ><ion-button shape="round" (click)="incrementar(nos)"
+          >+{{quantidade}}</ion-button
+        ></ion-col
+      >
+      <ion-col
+        ><ion-button shape="round" (click)="incrementar(eles)"
+          >+{{quantidade}}</ion-button
+        ></ion-col
+      >
+    </ion-row>
+    <ion-row>
+      <ion-col
+        ><ion-button shape="round" (click)="desincrementar(nos)"
+          >-1</ion-button
+        ></ion-col
+      >
+      <ion-col
+        ><ion-button shape="round" (click)="desincrementar(eles)"
+          >-1</ion-button
+        ></ion-col
+      >
+    </ion-row>
+    <ion-row>
+      <ion-col
+        ><h3>
+          <ion-icon slot="icon-only" name="trophy"></ion-icon> {{nos.partidas}}
+        </h3></ion-col
+      >
+      <ion-col
+        ><h3>
+          {{eles.partidas}}
+          <ion-icon slot="icon-only" name="trophy"></ion-icon></h3
+      ></ion-col>
+    </ion-row>
+    @if(nos.pontos!=12 && eles.pontos!=12){
+    <ion-row>
+      <ion-col
+        ><ion-button shape="round" (click)="valerMaisPontos()"
+          >Elevar a quantidade de pontos. Atualmente={{quantidade}}</ion-button
+        ></ion-col
+      >
+    </ion-row>
+    <ion-row>
+      <ion-col
+        ><ion-button shape="round" (click)="zerarPontos()"
+          >Zerar Pontos</ion-button
+        ></ion-col
+      >
+      <ion-col
+        ><ion-button shape="round" (click)="zerarVitorias()"
+          >Zerar Vitorias
+        </ion-button></ion-col
+      >
+    </ion-row>
+    } @else{
+    <ion-row>
+      <ion-col
+        ><ion-button shape="round" (click)="reiniciar()"
+          >Reiniciar</ion-button
+        ></ion-col
+      >
+    </ion-row>
+    }
+  </ion-grid>
 </ion-content>
