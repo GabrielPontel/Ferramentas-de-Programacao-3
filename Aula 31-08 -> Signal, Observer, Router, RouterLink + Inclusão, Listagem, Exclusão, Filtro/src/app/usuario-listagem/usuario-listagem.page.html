@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="secondary" slot="end">
+      <ion-button size="large" routerLink="/usuario.cadastro">
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>usuario-listagem</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-searchbar [debounce]="1000" (ionInput)="handleInput($event)"></ion-searchbar>
+  <ion-list>
+    @for (user of users(); track $index) {
+    <ion-item>
+      <!-- <ion-avatar aria-hidden="true" slot="start">
+      <img alt="" src={{user.avatar}} />
+    </ion-avatar> -->
+      <ion-label>{{user.first_name}}</ion-label>
+      <ion-button (click)="remover(user.id)">Remover</ion-button>
+    </ion-item>
+    }
+  </ion-list>
+</ion-content>

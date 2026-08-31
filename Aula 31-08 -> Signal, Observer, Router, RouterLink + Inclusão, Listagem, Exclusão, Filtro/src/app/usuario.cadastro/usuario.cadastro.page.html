@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Cadastro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!--[formGroup]="nomeDoFormularioNoTs" Lembrar de importar no ts ReactiveFormsModule-->
+  <!--formControlName="nomeDoAtributoDoTs" Lembrando fazer um para cada atributo-->
+  <form [formGroup]="form">
+    <ion-list>
+      <ion-item>
+        <ion-input
+          label="Primeiro Nome"
+          formControlName="first_name"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Último Nome" formControlName="last_name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="E-mail" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-button (click)="cadastrar()">Cadastrar</ion-button>
+      <ion-button routerLink="/usuario-listagem">Cancelar</ion-button>
+    </ion-list>
+  </form>
+</ion-content>
