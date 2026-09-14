@@ -1,0 +1,61 @@
+{
+  "users": [
+    {
+      "first_name": "Emma adadaaaaaaaaaaaaaaaaaaaaaa",
+      "last_name": "Wong",
+      "email": "emma.wong@reqres.in",
+      "id": "3",
+      "avatar": "https://reqres.in/img/faces/3-image.jpg"
+    },
+    {
+      "id": "4",
+      "email": "eve.holt@reqres.in",
+      "first_name": "Eve",
+      "last_name": "Holt",
+      "avatar": "https://reqres.in/img/faces/4-image.jpg"
+    },
+    {
+      "first_name": "Tracey5445",
+      "last_name": "Ramos",
+      "email": "tracey.ramos@reqres.in",
+      "id": "6",
+      "avatar": "https://reqres.in/img/faces/6-image.jpg"
+    },
+    {
+      "first_name": "Gabriel2",
+      "last_name": "pontel",
+      "email": "pomtsom@fhsgf",
+      "id": "xPgRnqSbI9E",
+      "avatar": ""
+    },
+    {
+      "first_name": "aaaa",
+      "last_name": "aaaaaaaaaaaaaaaaaaaaaaaa",
+      "email": "aaaaaaaaaaaaaaaaaaaa",
+      "id": "HseygNVWBGw",
+      "avatar": ""
+    },
+    {
+      "first_name": "ewtwetwetwet",
+      "last_name": "wetwetwetwe",
+      "email": "twetwtwet",
+      "id": "RX8vfzFR6Ak",
+      "avatar": ""
+    },
+    {
+      "first_name": "aaaaaaaaaaaaaaa",
+      "last_name": "aaaaaaaaaaaaaaaa",
+      "email": "aaaaaaaaaaaaaaaaaaaaaa",
+      "id": "nDSFC-jE20o",
+      "avatar": ""
+    },
+    {
+      "first_name": "gdfgfdgfdg",
+      "last_name": "fdgfdgfdgfd",
+      "email": "gfdgdfgfdg",
+      "id": "3DQFxG2yMCk",
+      "avatar": ""
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
