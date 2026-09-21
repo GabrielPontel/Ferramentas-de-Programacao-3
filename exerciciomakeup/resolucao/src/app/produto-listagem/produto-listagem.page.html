@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>produto-listagem</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-searchbar
+    [debounce]="1000"
+    (ionInput)="handleInput($event)"
+  ></ion-searchbar>
+  
+  <ion-list>
+    <ion-item>
+      <ion-label>Brand</ion-label>
+      <ion-label>Quantity</ion-label>
+      <ion-label>Name Product</ion-label>
+      <ion-label>Biggest Price</ion-label>
+      <ion-label></ion-label>
+    </ion-item>
+    @for (item of marcas; track $index) {
+    <ion-item>
+     
+      <ion-label>{{item.brand}}</ion-label>
+      <ion-label>{{item.quantity}}</ion-label>
+      <ion-label>{{item.nameProduct}}</ion-label>
+      <ion-label>{{item.biggestPrice}}</ion-label>
+      <ion-label></ion-label>
+      <ion-button (click)="remover($index)">Delete</ion-button> 
+    </ion-item>
+    }
+    <ion-alert
+      [isOpen]="openAlert"
+      header="Deseja excluir:"
+      [buttons]="alertButtons"
+      (didDismiss)="setOpen(false)"
+    ></ion-alert>
+  </ion-list>
+</ion-content>
