@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>produto-listagem</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-input label="Brand" [(ngModel)]="marcaBuscada"></ion-input>
+  <ion-button (click)="buscarMarca()">Buscar Marca</ion-button>
+  <ion-grid>
+    <ion-row>
+      <ion-col><ion-label>Brand</ion-label></ion-col>
+      <ion-col><ion-label>Quantity</ion-label></ion-col>
+      <ion-col><ion-label>Name Product</ion-label></ion-col>
+      <ion-col><ion-label>Biggest Price</ion-label></ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+    @for (item of marcas(); track $index) {
+    <ion-row>
+      <ion-col><ion-label>{{item.brand}}</ion-label></ion-col>
+      <ion-col><ion-label>{{item.quantity}}</ion-label></ion-col>
+      <ion-col><ion-label>{{item.nameProduct}}</ion-label></ion-col>
+      <ion-col><ion-label>{{item.biggestPrice}}</ion-label></ion-col>
+
+      <ion-col
+        ><ion-button (click)="remover($index)">Delete</ion-button></ion-col
+      >
+    </ion-row>
+    }
+    <ion-alert
+      [isOpen]="openAlert"
+      header="Deseja excluir:"
+      [buttons]="alertButtons"
+      (didDismiss)="setOpen(false)"
+    ></ion-alert>
+  </ion-grid>
+
+  <h2>Valor total: {{valorTotal()}}</h2>
+</ion-content>
