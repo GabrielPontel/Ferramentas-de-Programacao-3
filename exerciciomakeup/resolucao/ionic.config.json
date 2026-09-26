@@ -1,7 +1,0 @@
-{
-  "name": "resolucao",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular-standalone"
-}
